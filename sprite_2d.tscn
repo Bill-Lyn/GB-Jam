@@ -4,5 +4,6 @@
 [ext_resource type="Script" path="res://sprite_2d.gd" id="2_61wrc"]
 
 [node name="Sprite2D" type="Sprite2D"]
+position = Vector2(542, 228)
 texture = ExtResource("1_tjjhx")
 script = ExtResource("2_61wrc")
