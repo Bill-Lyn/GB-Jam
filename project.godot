@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Downloads"
-run/main_scene="res://sprite_2d.tscn"
+run/main_scene="res://street.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://art/GBJAMlogosplash.PNG"
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=720
+window/size/viewport_width=160
+window/size/viewport_height=144
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -60,5 +62,6 @@ move_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
