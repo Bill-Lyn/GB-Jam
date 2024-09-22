@@ -37,6 +37,12 @@ func play_anim():
 	
 	if (velocity.x == 0 and velocity.y == 0):
 		anim.play("idle")
+	elif (velocity.x > 0 and velocity.y == 0):
+		anim.play("right")
+	elif (velocity.x < 0 and velocity.y == 0):
+		anim.play("left")
+	elif (velocity.x == 0 and velocity.y < 0):
+		anim.play("up")
 	else:
 		anim.play("walking")
 	

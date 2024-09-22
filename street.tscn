@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cssajkohh2urp"]
+[gd_scene load_steps=12 format=3 uid="uid://cssajkohh2urp"]
 
 [ext_resource type="PackedScene" uid="uid://7fxa1ktm6lfp" path="res://player.tscn" id="1_52f8r"]
 [ext_resource type="Script" path="res://street.gd" id="1_71e8g"]
@@ -202,10 +202,17 @@ sources/1 = SubResource("TileSetAtlasSource_l6ihg")
 sources/2 = SubResource("TileSetAtlasSource_hyodl")
 sources/3 = SubResource("TileSetAtlasSource_ortte")
 
+[sub_resource type="Curve2D" id="Curve2D_kbutv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 160, 0, 0, 0, 0, 0, 160, 144, 0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Street" type="Node2D"]
 script = ExtResource("1_71e8g")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(6, 13)
 tile_set = SubResource("TileSet_hq1lw")
 format = 2
 layer_0/name = "Background"
@@ -219,3 +226,17 @@ layer_2/tile_data = PackedInt32Array(-196602, 1, 0, -196597, 196609, 0, -196606,
 
 [node name="Pickup" parent="." instance=ExtResource("5_hesr6")]
 position = Vector2(-50, 15)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kbutv")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]

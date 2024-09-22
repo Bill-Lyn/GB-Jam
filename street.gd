@@ -6,7 +6,6 @@ var candies_collected;
 func _ready():
 	candies_collected = 0
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
