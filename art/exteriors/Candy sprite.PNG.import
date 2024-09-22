@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://erctswp6bubf"
-path="res://.godot/imported/IMG_5946.PNG-5b8a67a85091b81bc4044532addd8966.ctex"
+uid="uid://bx0rn7lu0d3ke"
+path="res://.godot/imported/Candy sprite.PNG-3fd4efffa98227c1c98bc41e0f0a552f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/exteriors/IMG_5946.PNG"
-dest_files=["res://.godot/imported/IMG_5946.PNG-5b8a67a85091b81bc4044532addd8966.ctex"]
+source_file="res://art/exteriors/Candy sprite.PNG"
+dest_files=["res://.godot/imported/Candy sprite.PNG-3fd4efffa98227c1c98bc41e0f0a552f.ctex"]
 
 [params]
 
