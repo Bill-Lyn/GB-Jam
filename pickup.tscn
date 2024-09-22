@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://besh58x74u1q3"]
+
+[ext_resource type="Script" path="res://pickup.gd" id="1_xdpff"]
+[ext_resource type="Texture2D" uid="uid://bx0rn7lu0d3ke" path="res://art/exteriors/Candy sprite.PNG" id="2_a3dig"]
+[ext_resource type="PackedScene" uid="uid://mbhdrqtao8ld" path="res://Interaction/Interaction Area/interaction_area.tscn" id="3_i30vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y64m"]
+atlas = ExtResource("2_a3dig")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7c6r4"]
+radius = 32.0
+
+[node name="Pickup" type="Node2D"]
+script = ExtResource("1_xdpff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2y64m")
+centered = false
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_i30vr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_7c6r4")
