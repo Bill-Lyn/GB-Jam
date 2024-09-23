@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cssajkohh2urp"]
+[gd_scene load_steps=14 format=3 uid="uid://cssajkohh2urp"]
 
 [ext_resource type="PackedScene" uid="uid://7fxa1ktm6lfp" path="res://player.tscn" id="1_52f8r"]
 [ext_resource type="Script" path="res://street.gd" id="1_71e8g"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dclnmiwij7wqk" path="res://art/exteriors/Trees.PNG" id="3_dpqay"]
 [ext_resource type="Texture2D" uid="uid://dlupkc28erfju" path="res://art/exteriors/Terrain.PNG" id="4_52hfd"]
 [ext_resource type="PackedScene" uid="uid://besh58x74u1q3" path="res://pickup.tscn" id="5_hesr6"]
+[ext_resource type="Script" path="res://ScoreTimer.gd" id="7_mko0b"]
+[ext_resource type="AudioStream" uid="uid://d3srf01kpeyct" path="res://Gbjam2.mp3" id="8_pttcs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6ihg"]
 texture = ExtResource("2_vdx2t")
@@ -232,6 +234,8 @@ wait_time = 0.5
 one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("7_mko0b")
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -240,3 +244,9 @@ wait_time = 2.0
 curve = SubResource("Curve2D_kbutv")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pttcs")
+autoplay = true
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
