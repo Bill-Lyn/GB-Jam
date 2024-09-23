@@ -1,16 +1,14 @@
-extends Node
+extends Timer
 
-var candies_collected;
-var countdown
-var game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	candies_collected = 0
-	countdown = 30
-	game_over = false
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _on_timer_timeout():
+	Global.countdown = Global.countdown - 1

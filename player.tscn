@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://7fxa1ktm6lfp"]
+[gd_scene load_steps=19 format=3 uid="uid://7fxa1ktm6lfp"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_0cdwj"]
 [ext_resource type="Texture2D" uid="uid://c6xae2ndebuo5" path="res://art/exteriors/Player movement.PNG" id="2_xwylj"]
+[ext_resource type="FontFile" uid="uid://bdq6mjyh55frs" path="res://Rockboxcond12.ttf" id="3_0wqdk"]
+[ext_resource type="Script" path="res://Label.gd" id="3_q3bot"]
+[ext_resource type="Script" path="res://Label2.gd" id="5_qbybd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ev0qc"]
 size = Vector2(16, 16)
@@ -97,6 +100,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_sut14"]
+font = ExtResource("3_0wqdk")
+font_color = Color(0.0588235, 0.0588235, 0.109804, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3of6y"]
+font_color = Color(0.0588235, 0.0588235, 0.109804, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
@@ -112,5 +123,19 @@ animation = &"up"
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -80.0
+offset_top = -64.0
+offset_right = -32.0
+offset_bottom = -41.0
+label_settings = SubResource("LabelSettings_sut14")
+script = ExtResource("3_q3bot")
+
+[node name="Label2" type="Label" parent="Camera2D"]
+offset_left = 48.0
+offset_top = -64.0
+offset_right = 80.0
+offset_bottom = -41.0
+label_settings = SubResource("LabelSettings_3of6y")
+script = ExtResource("5_qbybd")
